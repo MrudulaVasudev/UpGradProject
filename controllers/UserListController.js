@@ -1,4 +1,4 @@
-(function(){
+(function () {
 
     function UserListController($scope) {
         $scope.UserList = "Users List"
@@ -25,10 +25,22 @@
                 lastName: 'Thornton',
                 email: 'jacob@jacobthornton.com',
                 phone: 4567876543,
-                status: "active"
+                status: "inactive"
             }
-        ]
+        ];
+
+        $scope.toggleSwitch = function (status, id) {
+            let identity = document.getElementById('toggle-btn' + id);
+            if (status === 'active') {
+                $scope.users[id].status = 'inactive';
+                angular.element(identity).removeClass('active');
+            } else {
+                $scope.users[id].status = 'active';
+                angular.element(identity).addClass('active');
+            }
+        }
     }
+    
     UserListController.inject = ['$scope'];
     angular.module('UserApp').controller("UserListController", UserListController);
 }());

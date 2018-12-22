@@ -28,10 +28,9 @@
                 <td>{{user.email}}</td>
                 <td>{{user.phone}}</td>
                 <td>
-                    <label class="switch">
-                        <input type="checkbox">
-                        <span class="slider round"></span>
-                    </label>
+                    <div class="toggle-btn" id="toggle-btn{{$index}}" ng-init="active = user.status" ng-class="active">
+                        <div class="inner-circle" ng-click="toggleSwitch(user.status, $index)"></div>
+                    </div>
                 </td>
             </tr>
         </tbody>
