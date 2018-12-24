@@ -1,7 +1,21 @@
 (function () {
 
     function UserListController($scope) {
-        $scope.UserList = "Users List"
+        $scope.UserList = "Users List";
+        var EditUserModelDialog = function() {
+            this.visible = false;
+        }
+
+        EditUserModelDialog.prototype.open = function(user, id) {
+            this.user = user;
+            this.id = id;
+            this.visible = true;
+        }
+
+        EditUserModelDialog.prototype.close = function() {
+            this.visible = false;
+        }
+
         $scope.users = [
             {
                 id: 1,
@@ -28,17 +42,8 @@
                 status: "inactive"
             }
         ];
-
-        $scope.toggleSwitch = function (status, id) {
-            let identity = document.getElementById('toggle-btn' + id);
-            if (status === 'active') {
-                $scope.users[id].status = 'inactive';
-                angular.element(identity).removeClass('active');
-            } else {
-                $scope.users[id].status = 'active';
-                angular.element(identity).addClass('active');
-            }
-        }
+        
+        $scope.editDialog = new EditUserModelDialog();
     }
     
     UserListController.inject = ['$scope'];

@@ -29,11 +29,12 @@
                 <td>{{user.phone}}</td>
                 <td>
                     <div class="toggle-btn" id="toggle-btn{{$index}}" ng-init="active = user.status" ng-class="active">
-                        <div class="inner-circle" ng-click="toggleSwitch(user.status, $index)"></div>
+                        <!-- <div class="inner-circle" ng-click="toggleSwitch(user.status, $index)"></div> -->
+                        <div class="inner-circle" ng-click="editDialog.open(user, 'toggle-btn'+$index)"></div>
                     </div>
                 </td>
+                <edit-user-dialog model="editDialog"></edit-user-dialog>
             </tr>
         </tbody>
     </table>
-
 </div>

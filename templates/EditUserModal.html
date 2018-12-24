@@ -1,0 +1,26 @@
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title verdana">Confirm status change</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <p ng-if="model.user.status === 'active'">Are you sure you want to change the Status for <strong>{{model.user.firstName}} {{model.user.lastName}}</strong> from <strong>{{model.user.status}}</strong> to <strong>inactive</strong>?</p>
+                <p ng-if="model.user.status === 'inactive'">Are you sure you want to change the Status for <strong>{{model.user.firstName}} {{model.user.lastName}}</strong> from <strong>{{model.user.status}}</strong> to <strong>active</strong>?</p>
+
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-info" data-dismiss="modal" ng-click="toggleSwitch(model.user.status, model.id)">Change Status</button>
+            </div>
+        </div>
+    </div>
+</div>
