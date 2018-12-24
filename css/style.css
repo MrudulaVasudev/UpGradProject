@@ -37,3 +37,40 @@ body {
 .verdana {
     font-family: Arial, Helvetica, sans-serif
 }
+.label {
+    width: 25%;
+    text-align: right;
+    margin-right: 15px;
+}
+.inputWidth {
+    width: 65%;
+    display: inline;
+    margin-left: 10px;
+}
+
+.form-distance {
+    margin-bottom: 15px;
+}
+
+.button-blue-color {
+    background-color: rgb(69, 122, 178);
+    border: 1px solid rgb(69, 122, 178);
+}
+
+.button-gray-color {
+    border-color: rgb(217, 217, 217);
+    color: rgb(104, 105, 106);
+}
+
+.form-control::placeholder {
+    color: rgb(197, 195, 195);
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: rgb(214, 214, 214);
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+   color: rgb(214, 214, 214);
+  }

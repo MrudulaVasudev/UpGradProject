@@ -16,6 +16,10 @@
             this.visible = false;
         }
 
+        $scope.newUser = {};
+
+        console.log($scope.newUser)
+
         $scope.users = [
             {
                 id: 1,
@@ -44,6 +48,24 @@
         ];
         
         $scope.editDialog = new EditUserModelDialog();
+
+        //Add new user to user list
+        $scope.addToUserList = function(newUser) {
+            let index = $scope.users.length + 1;
+            newUser.id = index;
+            console.log(newUser);
+
+            $scope.users.push(newUser)
+            console.log(newUser);
+            
+            $scope.newUser = {
+                firstName: '',
+                lastName: '',
+                email: '',
+                phone: '',
+                status: 'active'
+            };
+        }
     }
     
     UserListController.inject = ['$scope'];
