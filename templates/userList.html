@@ -5,19 +5,19 @@
             <input type="text" name="" id="" class="form-control" placeholder="type to search">
         </div>
         <div class="col-sm-2">
-            <button type="button" class="btn btn-info button-move button-blue-color" data-toggle="modal" data-target="#addNewUser">Add User</button>
+            <button type="button" class="btn btn-info button-move button-blue-color" ng-click="init()" data-toggle="modal" data-target="#addNewUser">Add User</button>
         </div>
     </div>
     <br>
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Status</th>
+                <th>{{userFields.id}}</th>
+                <th>{{userFields.firstName}}</th>
+                <th>{{userFields.lastName}}</th>
+                <th>{{userFields.email}}</th>
+                <th>{{userFields.phone}}</th>
+                <th>{{userFields.status.name}}</th>
             </tr>
         </thead>
         <tbody>
@@ -51,28 +51,28 @@
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <form>
+                    <form name="userForm">
                         <div class="form-distance">
-                            <label for="firstName" class="label">First Name</label>
-                            <input type="text" id="firstName" class="form-control inputWidth" placeholder="Enter first name" ng-model="newUser.firstName">
+                            <label for="firstName" class="label">{{userFields.firstName}}</label>
+                            <input type="text" id="firstName" name="firstName" class="form-control inputWidth" placeholder="Enter first name" ng-model="newUser.firstName" required>
                         </div>
                         <div class="form-distance">
-                            <label for="lastName" class="label">Last Name</label>
-                            <input type="text" id="lastName" class="form-control inputWidth" placeholder="Enter last name" ng-model="newUser.lastName">
+                            <label for="lastName" class="label">{{userFields.lastName}}</label>
+                            <input type="text" id="lastName" name="lastName" class="form-control inputWidth" placeholder="Enter last name" ng-model="newUser.lastName" required>
                         </div>
                         <div class="form-distance">
-                            <label for="email" class="label">Email</label>
-                            <input type="text" id="email" class="form-control inputWidth" placeholder="Enter email" ng-model="newUser.email">
+                            <label for="email" class="label">{{userFields.email}}</label>
+                            <input type="email" id="email" name="email" class="form-control inputWidth" placeholder="Enter email" ng-model="newUser.email" required>
                         </div>
                         <div class="form-distance">
-                            <label for="phone" class="label">Phone</label>
-                            <input type="text" id="phone" class="form-control inputWidth" placeholder="Enter phone number" ng-model="newUser.phone">
+                            <label for="phone" class="label">{{userFields.phoneNumber}}</label>
+                            <input type="number" id="phone" name="phoneNumber" class="form-control inputWidth" ng-maxlength="maxLength" ng-minlength="minLength" placeholder="Enter phone number" ng-model="newUser.phone" number required>
                         </div>
                         <div class="form-distance">
-                            <label for="Status" class="label">Status</label>
+                            <label for="Status" class="label">{{userFields.status.name}}</label>
                             <select id="Status" ng-init="newUser.status='active'" class="form-control inputWidth" ng-model="newUser.status">
-                                <option value="active" selected="true">Active</option>
-                                <option value="inactive">Inactive</option>
+                                <option value="active" selected="true">{{userFields.status.valueActive}}</option>
+                                <option value="inactive">{{userFields.status.valueInactive}}</option>
                             </select>
                         </div>
                     </form>
@@ -81,7 +81,7 @@
                 <!-- Modal footer -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn btn-outline-secondary button-gray-color" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-info button-blue-color" data-dismiss="modal" ng-click="addToUserList(newUser)">Add</button>
+                    <button type="submit" class="btn btn-info button-blue-color" data-dismiss="modal" ng-click="addToUserList(newUser)" ng-disabled="userForm.$invalid">Add</button>
                 </div>
 
             </div>
