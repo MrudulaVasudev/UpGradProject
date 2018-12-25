@@ -13,10 +13,10 @@ Download and install node and npm  - https://nodesource.com/blog/installing-node
 
 Download git - https://git-scm.com/downloads . Keep the defaults and install git.
 If Windows - add the path to environment variables <br />
-    ``` * Control Panel -> System -> Advanced System settings -> Environment variables -> Double click on path -> new <br />
+     * Control Panel -> System -> Advanced System settings -> Environment variables -> Double click on path -> new <br />
         1. C:\Program Files\Git\bin <br />
         2. C:\Program Files\Git\cmd
-    ```
+        
 ### Project setup
 
 Step1 - Create a new folder for the project(say UpGradProject)
