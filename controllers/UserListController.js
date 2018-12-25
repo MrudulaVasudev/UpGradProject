@@ -47,7 +47,7 @@
                 firstName: 'Steve',
                 lastName: 'Carlos',
                 email: 'steve@stevecarlos.com',
-                phone: 4567876543,
+                phone: 5465768902,
                 status: "active"
             },
             {
@@ -55,7 +55,7 @@
                 firstName: 'Jacob',
                 lastName: 'Thornton',
                 email: 'jacob@jacobthornton.com',
-                phone: 4567876543,
+                phone: 7676288318,
                 status: "inactive"
             }
         ];
@@ -73,6 +73,10 @@
             };
         }
 
+        $scope.search = function() {
+
+        }
+
         //Add new user to user list
         $scope.addToUserList = function (newUser) {
             let index = $scope.users.length + 1;
@@ -86,10 +90,11 @@
         }
 
         $scope.submitForm = function (isValid) {
-            console.log("VAlid: ", isValid)
+            console.log("Valid: ", isValid)
         }
     }
 
     UserListController.inject = ['$scope'];
     angular.module('UserApp').controller("UserListController", UserListController);
+
 }());

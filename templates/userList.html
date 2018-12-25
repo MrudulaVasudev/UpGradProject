@@ -2,7 +2,7 @@
     <h2 class="headingFont">{{UserList}}</h2>
     <div class="row">
         <div class="col-sm-10">
-            <input type="text" name="" id="" class="form-control" placeholder="type to search">
+            <input type="text" name="searchBox" id="searchBox" class="form-control" placeholder="type to search" ng-model="seachText">
         </div>
         <div class="col-sm-2">
             <button type="button" class="btn btn-info button-move button-blue-color" ng-click="init()" data-toggle="modal" data-target="#addNewUser">Add User</button>
@@ -21,7 +21,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="user in users">
+            <tr ng-repeat="user in users | search: seachText">
                 <td>{{user.id}}</td>
                 <td>{{user.firstName}}</td>
                 <td>{{user.lastName}}</td>
