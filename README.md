@@ -1,7 +1,5 @@
 # UpGradProject
-User Application
-
-Instructions to run the program
+User Application - Add a new user, search for the user you want and choose to either have a user active or inactive.
 
 ## Getting Started
 
