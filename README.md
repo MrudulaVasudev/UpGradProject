@@ -12,9 +12,9 @@ Install 'Live Server' extension on Visual Studio Code - View -> Extensions -> se
 Download and install node and npm  - https://nodesource.com/blog/installing-nodejs-tutorial-windows/
 
 Download git - https://git-scm.com/downloads . Keep the defaults and install git.
-If Windows - add the path to environment variables __
-    ``` * Control Panel -> System -> Advanced System settings -> Environment variables -> Double click on path -> new __
-        1. C:\Program Files\Git\bin
+If Windows - add the path to environment variables <br />
+    ``` * Control Panel -> System -> Advanced System settings -> Environment variables -> Double click on path -> new <br />
+        1. C:\Program Files\Git\bin <br />
         2. C:\Program Files\Git\cmd
     ```
 ### Project setup
