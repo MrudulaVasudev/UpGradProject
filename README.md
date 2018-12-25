@@ -24,9 +24,9 @@ If Windows - add the path to environment variables
     
 ### Project setup
 
-Step1 - Create a new folder for the project(say UpGradProject)
+Step1 - Create a new folder for the project(say UpGradProject). Also keep this folder open on Visual Studio Code
 
-Step2 - Open Git Bash(Windows) / Terminal(Mac) and navigate to this folder. Also keep this folder open on Visual Studio Code
+Step2 - Open Git Bash(Windows) / Terminal(Mac) and navigate to this folder. 
 
 Step3 - Clone the git repository - git clone https://github.com/MrudulaVasudev/UpGradProject.git
 
