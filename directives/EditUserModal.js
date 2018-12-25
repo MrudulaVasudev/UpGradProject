@@ -12,13 +12,13 @@
                 });
 
                 element.on('shown.bs.modal', function () {
-                    scope.$apply(function () {
+                    scope.$applyAsync(function () {
                         scope.model.visible = true;
                     });
                 });
 
                 element.on('hidden.bs.modal', function () {
-                    scope.$apply(function () {
+                    scope.$applyAsync(function () {
                         scope.model.visible = false;
                     });
                 });

@@ -1,6 +1,6 @@
 (function () {
 
-    function UserListController($scope) {
+    function UserListController($scope, $http) {
         $scope.UserList = "Users List";
         var EditUserModelDialog = function () {
             this.visible = false;
@@ -33,33 +33,10 @@
             }
         }
 
-        $scope.users = [
-            {
-                id: 1,
-                firstName: 'John',
-                lastName: 'Doe',
-                email: 'john@doejohn.com',
-                phone: 4567876543,
-                status: "active"
-            },
-            {
-                id: 2,
-                firstName: 'Steve',
-                lastName: 'Carlos',
-                email: 'steve@stevecarlos.com',
-                phone: 5465768902,
-                status: "active"
-            },
-            {
-                id: 3,
-                firstName: 'Jacob',
-                lastName: 'Thornton',
-                email: 'jacob@jacobthornton.com',
-                phone: 7676288318,
-                status: "inactive"
-            }
-        ];
-
+        $scope.users = new Array();
+        $http.get('/UpGradProject/data/user.json').then(function(response) {
+            $scope.users = response.data.users;
+        });
         $scope.editDialog = new EditUserModelDialog();
 
         //Always setting the form to empty
@@ -73,20 +50,12 @@
             };
         }
 
-        $scope.search = function() {
-
-        }
-
         //Add new user to user list
         $scope.addToUserList = function (newUser) {
             let index = $scope.users.length + 1;
             newUser.id = index;
-            console.log(newUser);
 
-            $scope.users.push(newUser)
-            console.log(newUser);
-
-
+            $scope.users.push(newUser);
         }
 
         $scope.submitForm = function (isValid) {
