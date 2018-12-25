@@ -23,6 +23,24 @@
             "email": "jacob@jacobthornton.com",
             "phone": 7676288318,
             "status": "inactive"
+        },
+        {
+            "id": 4,
+            "firstName": "Clay",
+            "lastName": "Jensen",
+            "email": "clay@clayjensen.com",
+            "phone": 3245678678,
+            "status": "inactive"
+        },
+        {
+            "id": 5,
+            "firstName": "Hannah",
+            "lastName": "Baker",
+            "email": "hannah@hannahbaker.com",
+            "phone": 9878098782,
+            "status": "active"
         }
+        
+
     ]
 }
