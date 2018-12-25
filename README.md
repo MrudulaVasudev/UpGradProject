@@ -21,6 +21,7 @@ If Windows - add the path to environment variables
         </ol>
         </li>
     </ul>
+    
 ### Project setup
 
 Step1 - Create a new folder for the project(say UpGradProject)
